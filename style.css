@@ -19,11 +19,11 @@ body {
 /* Navbar - Fixed top pe, mobile friendly */
 nav {
     position: fixed;
-    top: 10px;
+    top: 0px;             /* 🔹 strip bilkul top */
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0 10px;
+    padding: 0;          /* 🔹 side padding hatao */
     pointer-events: none; /* Sirf links clickable rahein */
 }
 
@@ -33,28 +33,29 @@ nav > .navbar {
 
 .navbar {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: place-between;      /* 🔹 left-right alignment */
+    align-items: center;
+    flex-wrap: nowrap;               /* 🔹 ek hi row */
+    gap: 10px;                     /* 🔹 gap kam */
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 14px 30px;
-    border-radius: 50px;
-    margin: 0 auto;
-    width: fit-content;
-    max-width: 95%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 10px 16px;            /* 🔹 patli height */
+    border-radius: 0px;             /* 🔹 strip look */
+    margin: 0;
+    width: 100%;                   /* 🔹 full width strip */
+    max-width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);   /* 🔹 neeche line */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Normal links */
 .navbar a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    padding: 10px 20px;
-    border-radius: 30px;
+    font-weight: 500;
+    font-size: 14px;           /* 🔹 size chhota */
+    padding: 6px 10px;          /* 🔹 height kam */
+    border-radius: 6px;         /* 🔹 subtle */
     transition: all 0.3s ease;
 }
 
@@ -140,7 +141,7 @@ p {
         display: none;
         flex-direction: column;
         gap: 12px;
-        margin-top: 15px;
+        margin-top: 12px;
         width: 100%;
         text-align: center;
     }
