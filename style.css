@@ -16,38 +16,54 @@ body {
     overflow-x: hidden;          /* Ye important – horizontal scroll band */
 }
 
-/* Navbar mobile fix */
+/* Navbar - Fixed top pe, mobile friendly */
 nav {
     position: fixed;
-    top: 10px;                   /* Thoda upar kiya mobile pe better fit ke liye */
+    top: 10px;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0 10px;             /* Sides se thoda space */
+    padding: 0 10px;
+    pointer-events: none; /* Sirf links clickable rahein */
+}
+
+nav > .navbar {
+    pointer-events: all; /* Links ko wapas clickable banao */
 }
 
 .navbar {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;             /* Mobile pe wrap ho jaye agar zyada items */
-    gap: 15px;                   /* Gap kam kiya mobile ke liye */
+    flex-wrap: wrap;
+    gap: 20px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 12px 20px;          /* Padding kam kiya */
+    padding: 14px 30px;
     border-radius: 50px;
     margin: 0 auto;
     width: fit-content;
-    max-width: 95%;              /* Screen ke 95% se zyada nahi */
+    max-width: 95%;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Normal links */
 .navbar a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 16px;           /* Button size kam */
+    font-size: 17px;
+    padding: 10px 20px;
     border-radius: 30px;
-    transition: 0.3s;
-    font-size: 16px;             /* Text chhota mobile pe */
+    transition: all 0.3s ease;
+}
+
+/* Hover pe green highlight – ye wapas aa jayega! */
+.navbar a:hover {
+    background-color: #00ff88 !important;
+    color: black !important;
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.7);
 }
 
 /* Hero section mobile fix */
@@ -100,4 +116,5 @@ p {
     max-width: 90%;
     padding: 25px;
     margin: 20px auto;
+
 }
