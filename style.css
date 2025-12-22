@@ -1,51 +1,58 @@
-/* Ye line sabse upar add kar do agar nahi hai */
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body ko mobile friendly banao */
+/* ============================= */
+/* BODY */
+/* ============================= */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #0f0f0f;
     color: #ffffff;
     line-height: 1.7;
     text-align: center;
-    padding-top: 100px;          /* Navbar ke liye */
-    overflow-x: hidden;          /* Ye important – horizontal scroll band */
+    padding-top: 80px;          /* Navbar height ke liye */
+    overflow-x: hidden;
 }
 
-/* Navbar - Fixed top pe, mobile friendly */
+/* ============================= */
+/* NAVBAR STRIP */
+/* ============================= */
 nav {
     position: fixed;
-    top: 0px;             /* 🔹 strip bilkul top */
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0;          /* 🔹 side padding hatao */
-    pointer-events: none; /* Sirf links clickable rahein */
 }
 
-nav > .navbar {
-    pointer-events: all; /* Links ko wapas clickable banao */
-}
-
+/* Main navbar strip */
 .navbar {
     display: flex;
-    justify-content: place-between;      /* 🔹 left-right alignment */
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;               /* 🔹 ek hi row */
-    gap: 10px;                     /* 🔹 gap kam */
+
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 10px 16px;            /* 🔹 patli height */
-    border-radius: 0px;             /* 🔹 strip look */
-    margin: 0;
-    width: 100%;                   /* 🔹 full width strip */
-    max-width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);   /* 🔹 neeche line */
+
+    padding: 10px 16px;
+    width: 100%;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================= */
+/* NAV LINKS (DESKTOP STRIP) */
+/* ============================= */
+.nav-links {
+    display: flex;
+    gap: 12px;
 }
 
 /* Normal links */
@@ -53,101 +60,124 @@ nav > .navbar {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 14px;           /* 🔹 size chhota */
-    padding: 6px 10px;          /* 🔹 height kam */
-    border-radius: 6px;         /* 🔹 subtle */
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 30px;
     transition: all 0.3s ease;
 }
 
-/* Hover pe green highlight – ye wapas aa jayega! */
+/* Hover green capsule (DESKTOP) */
 .navbar a:hover {
-    background-color: #00ff88 !important;
-    color: black !important;
-    transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.7);
+    background-color: #00ff88;
+    color: #000;
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.6);
 }
 
-
-/* Hero section mobile fix */
-.hero {
-    padding: 120px 20px 80px;    /* Sides se 20px padding – safe */
-}
-
-.profile-pic {
-    width: 150px !important;
-    height: 150px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    border: 5px solid #00ff88;
-    margin: 20px auto 30px auto;
-    display: block;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
-}
-
-h1 {
-    font-size: 40px;             /* Mobile pe heading size kam */
-}
-
-h2 {
-    font-size: 28px;
-}
-
-p {
-    font-size: 18px;
-    padding: 0 10px;             /* Sides se safe space */
-    max-width: 90%;
-}
-
-/* Sections mobile fix */
-.section {
-    padding: 60px 20px;          /* Kam padding mobile pe */
-}
-
-.skills-grid {
-    gap: 15px;
-    padding: 0 10px;
-}
-
-.skill {
-    padding: 12px 25px;
-    font-size: 16px;
-}
-
-.project-card {
-    max-width: 90%;
-    padding: 25px;
-    margin: 20px auto;
-}
-
-/* ========== HAMBURGER ICON ========== */
+/* ============================= */
+/* HAMBURGER ICON */
+/* ============================= */
 .menu-toggle {
-    display: none;          /* Desktop pe hidden */
+    display: none;
     font-size: 26px;
     cursor: pointer;
     color: white;
 }
 
-/* ========== MOBILE VIEW ========== */
+/* ============================= */
+/* HERO + CONTENT (UNCHANGED) */
+/* ============================= */
+.hero {
+    padding: 120px 20px 80px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #00ff88;
+    margin: 20px auto 30px;
+    display: block;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 28px; }
+p  { font-size: 18px; max-width: 90%; margin: auto; }
+
+.section {
+    padding: 60px 20px;
+}
+
+/* ============================= */
+/* MOBILE VIEW */
+/* ============================= */
 @media (max-width: 768px) {
 
-    /* Hamburger icon show */
+    /* Hamburger show */
     .menu-toggle {
         display: block;
     }
 
-    /* Links ko hide karo */
+    /* Hide top links */
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 240px;
+        height: 100vh;
+
+        background-color: #1a1a1a;
+        padding-top: 80px;
+
         flex-direction: column;
-        gap: 12px;
-        margin-top: 12px;
-        width: 100%;
-        text-align: center;
+        gap: 18px;
+
+        transition: left 0.35s ease;
+        z-index: 2000;
     }
 
-    /* Click ke baad show */
+    /* Drawer open */
     .nav-links.active {
-        display: flex;
+        left: 0;
     }
+
+    /* Drawer links */
+    .nav-links a {
+        font-size: 16px;
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    /* Drawer hover / tap */
+    .nav-links a:hover,
+    .nav-links a:active {
+        background-color: #00ff88;
+        color: #000;
+        box-shadow: 0 0 18px rgba(0, 255, 136, 0.6);
+    }
+}
+
+/* ============================= */
+/* BACKGROUND OVERLAY */
+/* ============================= */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    z-index: 1500;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* ===== DESKTOP HOVER CAPSULE FINAL FIX ===== */
+
+/* Desktop strip ke links ke liye explicit hover */
+.nav-links a:hover {
+    background-color: #00ff88;
+    color: #000;
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.6);
+    transform: scale(1.05);
 }
