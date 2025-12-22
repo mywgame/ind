@@ -1,0 +1,103 @@
+/* Ye line sabse upar add kar do agar nahi hai */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body ko mobile friendly banao */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    line-height: 1.7;
+    text-align: center;
+    padding-top: 100px;          /* Navbar ke liye */
+    overflow-x: hidden;          /* Ye important – horizontal scroll band */
+}
+
+/* Navbar mobile fix */
+nav {
+    position: fixed;
+    top: 10px;                   /* Thoda upar kiya mobile pe better fit ke liye */
+    width: 100%;
+    z-index: 1000;
+    padding: 0 10px;             /* Sides se thoda space */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;             /* Mobile pe wrap ho jaye agar zyada items */
+    gap: 15px;                   /* Gap kam kiya mobile ke liye */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;          /* Padding kam kiya */
+    border-radius: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    max-width: 95%;              /* Screen ke 95% se zyada nahi */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;           /* Button size kam */
+    border-radius: 30px;
+    transition: 0.3s;
+    font-size: 16px;             /* Text chhota mobile pe */
+}
+
+/* Hero section mobile fix */
+.hero {
+    padding: 120px 20px 80px;    /* Sides se 20px padding – safe */
+}
+
+.profile-pic {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border: 5px solid #00ff88;
+    margin: 20px auto 30px auto;
+    display: block;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+h1 {
+    font-size: 40px;             /* Mobile pe heading size kam */
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    padding: 0 10px;             /* Sides se safe space */
+    max-width: 90%;
+}
+
+/* Sections mobile fix */
+.section {
+    padding: 60px 20px;          /* Kam padding mobile pe */
+}
+
+.skills-grid {
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.skill {
+    padding: 12px 25px;
+    font-size: 16px;
+}
+
+.project-card {
+    max-width: 90%;
+    padding: 25px;
+    margin: 20px auto;
+}
