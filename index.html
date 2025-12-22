@@ -23,15 +23,21 @@
         <div class="navbar">
              <!-- Hamburger Icon (Mobile only) -->
               <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-              <!-- Navigation Links -->
-             <div class="nav-links"></div>
+
+              <!-- Navigation Links (Drawer + Desktop dono ke liye) -->
+
+             <div class="nav-links">
             <a href="#">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
+        </div> 
         </div>
+
     </nav>
+    <div class="menu-overlay" onclick="toggleMenu()"></div>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -84,8 +90,29 @@
     <script>
 function toggleMenu() {
     document.querySelector(".nav-links").classList.toggle("active");
+    document.querySelector(".menu-overlay").classList.toggle("active");
 }
+
+/* ===== ACTIVE CAPSULE FIX ===== */
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function () {
+
+        /* Sab se active hatao */
+        document.querySelectorAll(".nav-links a").forEach(l => {
+            l.classList.remove("active");
+        });
+
+        /* Sirf clicked pe add */
+        this.classList.add("active");
+
+        /* Menu close karo (mobile UX) */
+        document.querySelector(".nav-links").classList.remove("active");
+        document.querySelector(".menu-overlay").classList.remove("active");
+    });
+});
 </script>
+
+
 
 
 </body>
