@@ -113,6 +113,27 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 </script>
 
 
+<script>
+/* Mobile touch glow fix */
+document.querySelectorAll('.nav-links a').forEach(link => {
+
+    link.addEventListener('touchstart', () => {
+        link.classList.add('touch-active');
+    });
+
+    link.addEventListener('touchend', () => {
+        link.classList.remove('touch-active');
+    });
+
+    link.addEventListener('touchcancel', () => {
+        link.classList.remove('touch-active');
+    });
+
+});
+</script>
+
+
+
 
 
 </body>
