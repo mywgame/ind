@@ -21,6 +21,10 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="navbar">
+             <!-- Hamburger Icon (Mobile only) -->
+              <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+              <!-- Navigation Links -->
+             <div class="nav-links"></div>
             <a href="#">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -76,6 +80,13 @@
         <p>Email: amit@example.com</p>
         <p>Learning Journey Continue...</p>
     </section>
+
+    <script>
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
+
 
 </body>
 </html>
