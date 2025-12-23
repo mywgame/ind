@@ -3,137 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amit | Beginner Web Developer</title>
+    <title>Amit | Web Developer</title>
 
-    <!-- CSS link -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=10">
 
-    <!-- PWA ke liye important lines -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1a1a1a">
-
-    <!-- Icons for PWA -->
-    <link rel="icon" href="icon-192.png" type="image/png">
-    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#0f0f0f">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="navbar">
-             <!-- Hamburger Icon (Mobile only) -->
-              <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <div class="navbar">
+        
+        
 
-              <!-- Navigation Links (Drawer + Desktop dono ke liye) -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-             <div class="nav-links">
-            <a href="#">Home</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-        </div> 
         </div>
+    </div>
+</nav>
 
-    </nav>
-    <div class="menu-overlay" onclick="toggleMenu()"></div>
+<div class="menu-overlay" onclick="toggleMenu()"></div>
 
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+    <img src="grok.jpg" class="profile-pic" alt="Amit">
+    <h1>Hi, I'm Amit 👋</h1>
+    <h2>Beginner Web Developer</h2>
+    <p>I learn by building real projects using HTML, CSS & JavaScript.</p>
+    <a href="#contact" class="cta-btn">Let's Talk</a>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="grok.jpg" alt="Amit's Photo" class="profile-pic">
-        
-        <h1>Hi, Main Amit Hun</h1>
-        <h2>Beginner Web Developer</h2>
-        <p>Main HTML, CSS aur JavaScript seekh raha hun.<br>
-           Roz practice karta hun aur projects bana raha hun!</p>
-        <button class="cta-btn">Let's Talk</button>
-    </section>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section glass">
+    <h2>About Me</h2>
+    <p>
+        I'm a passionate beginner web developer from India 🇮🇳.  
+        I love creating clean UI, learning daily and improving step by step.
+    </p>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>Namaste! Main ek passionate learner hun jo web development ki duniya mein nayi shuruaat kar raha hun. Mujhe coding karna bahut mazaa aata hai kyunki ye creativity aur logic ka mix hai. Abhi tak maine Snake Game banaya hai JavaScript mein 🐍 aur aur bhi projects bana raha hun.</p>
-    </section>
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section">
+    <h2>My Skills</h2>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2>My Skills</h2>
-        <div class="skills-grid">
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">Responsive Design</div>
-        </div>
-    </section>
+    <div class="skills-grid">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Responsive Design</div>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2>My Projects</h2>
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section glass">
+    <h2>Projects</h2>
+
+    <div class="projects">
         <div class="project-card">
-            <h3>Classic Snake Game 🐍</h3>
-            <p>JavaScript se banaya gaya pura game – arrow keys se control!</p>
+            <h3>🐍 Snake Game</h3>
+            <p>Pure JavaScript game using keyboard controls.</p>
         </div>
+
         <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>Ye wahi website hai jo abhi dekh rahe ho 😎</p>
+            <h3>💼 Portfolio Website</h3>
+            <p>This modern responsive portfolio you are seeing now.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <p>Email: amit@example.com</p>
-        <p>Learning Journey Continue...</p>
-    </section>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: amit@example.com</p>
+    <p>Learning & Growing Everyday 🚀</p>
+</section>
 
-    <script>
+<!-- ================= FOOTER ================= -->
+<footer>
+    © 2025 Amit • Built with ❤️ & CSS
+</footer>
+
+<script>
 function toggleMenu() {
     document.querySelector(".nav-links").classList.toggle("active");
     document.querySelector(".menu-overlay").classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("open");
 }
-
-/* ===== ACTIVE CAPSULE FIX ===== */
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", function () {
-
-        /* Sab se active hatao */
-        document.querySelectorAll(".nav-links a").forEach(l => {
-            l.classList.remove("active");
-        });
-
-        /* Sirf clicked pe add */
-        this.classList.add("active");
-
-        /* Menu close karo (mobile UX) */
-        document.querySelector(".nav-links").classList.remove("active");
-        document.querySelector(".menu-overlay").classList.remove("active");
-    });
-});
 </script>
-
-
-<script>
-/* Mobile touch glow fix */
-document.querySelectorAll('.nav-links a').forEach(link => {
-
-    link.addEventListener('touchstart', () => {
-        link.classList.add('touch-active');
-    });
-
-    link.addEventListener('touchend', () => {
-        link.classList.remove('touch-active');
-    });
-
-    link.addEventListener('touchcancel', () => {
-        link.classList.remove('touch-active');
-    });
-
-});
-</script>
-
-<script src="script.js"></script>
-
 
 </body>
 </html>
