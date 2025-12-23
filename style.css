@@ -188,3 +188,24 @@ p  { font-size: 18px; max-width: 90%; margin: auto; }
     color: #000;
     box-shadow: 0 0 18px rgba(0, 255, 136, 0.6);
 }
+
+/* Cross visible banane ke liye */
+.menu-toggle.open {
+    color: #00ff88;          /* Green cross */
+}
+
+
+/* ============================= */
+/* HAMBURGER / CROSS VISIBILITY FIX */
+/* ============================= */
+
+.menu-toggle {
+    color: #ffffff;          /* ☰ always white */
+    font-size: 28px;
+    z-index: 4000;           /* Sabke upar rahe */
+}
+
+/* Jab menu open ho */
+.menu-toggle.open {
+    color: #00ff88;          /* ✖ bright green */
+}
